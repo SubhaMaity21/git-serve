@@ -25,6 +25,7 @@ app.use((req, res, next) => {
 
   
 app.get('/api/electricity-estimate', async (req, res) => {
+    res.send('Hello World!');
     const { country, electricityValue } = req.query;
     const url = 'https://carbonsutra1.p.rapidapi.com/electricity_estimate';
     const options = {
