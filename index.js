@@ -25,8 +25,7 @@ app.use((req, res, next) => {
 
   
 app.get('/api/electricity-estimate', async (req, res) => {
-    console.log(apiKey);
-    console.log("hello");
+    
     
     const { country, electricityValue } = req.query;
     const url = 'https://carbonsutra1.p.rapidapi.com/electricity_estimate';
@@ -48,6 +47,8 @@ app.get('/api/electricity-estimate', async (req, res) => {
         const response = await fetch(url, options);
         const data = await response.json();
         res.json(data);
+        console.log(res.json(data));
+        
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
     }
